@@ -1,5 +1,7 @@
 package code_quality_lea;
 
+import sun.awt.image.ImageWatched;
+
 public class LinkedList<D> {
 
     private D data;
@@ -24,7 +26,7 @@ public class LinkedList<D> {
 
     // go function
     private LinkedList<D> goToHead(){
-        LinkedList<D> tmp = this.getPrev();
+        LinkedList<D> tmp = this;
         while (tmp.getPrev() != null) {
             tmp = tmp.getPrev();
         }
@@ -32,7 +34,7 @@ public class LinkedList<D> {
     }
 
     private LinkedList<D> goToTail(){
-        LinkedList<D> tmp = this.getNext();
+        LinkedList<D> tmp = this;
         while (tmp.getNext() != null) {
             tmp = tmp.getNext();
         }
@@ -98,10 +100,24 @@ public class LinkedList<D> {
         return true;
     }
 
+    public Boolean addHead(LinkedList<D> L){
+        LinkedList<D> Head = this.goToHead();
+        Head.prev = L;
+        L.setNext(Head);
+        return true;
+    }
+
     public Boolean addTail(D data){
         LinkedList<D> Tail = this.goToTail();
         Tail.next = new LinkedList<D>(data);
         Tail.next.setPrev(Tail);
+        return true;
+    }
+
+    public Boolean addTail(LinkedList<D> L){
+        LinkedList<D> Tail = this.goToTail();
+        Tail.next = L;
+        L.setPrev(Tail);
         return true;
     }
 
@@ -150,11 +166,19 @@ public class LinkedList<D> {
     }
 
     // get data
-    public D getHead(){
+    public LinkedList<D> getHead(){
+        return (this.goToHead());
+    }
+
+    public D getHeadData(){
         return (this.goToHead().getData());
     }
 
-    public D getTail(){
+    public LinkedList<D> getTail(){
+        return (this.goToTail());
+    }
+
+    public D getTailData(){
         return (this.goToTail().getData());
     }
 
