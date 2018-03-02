@@ -20,5 +20,6 @@ public class main {
         }
         System.out.printf(list_test.getData());
         System.out.println("]");
+
     }
 }

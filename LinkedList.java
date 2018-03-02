@@ -1,7 +1,5 @@
 package code_quality_lea;
 
-import sun.awt.image.ImageWatched;
-
 public class LinkedList<D> {
 
     private D data;
@@ -15,13 +13,6 @@ public class LinkedList<D> {
         this.next = null;
         this.prev = null;
         this.iterator = 0;
-    }
-
-    public LinkedList(D data, int it){
-        this.data = data;
-        this.next = null;
-        this.prev = null;
-        this.iterator = it;
     }
 
     // go function
@@ -53,6 +44,28 @@ public class LinkedList<D> {
         return tmp;
     }
 
+    private LinkedList<D> goToIndexIterator(int index){
+        LinkedList<D> tmp = this;
+        if (index == this.iterator){
+           return tmp;
+        } else if (index < this.iterator){
+            while (tmp != null){
+                if (tmp.iterator == index){
+                    return tmp;
+                }
+                tmp = tmp.getPrev();
+            }
+        } else if (index > this.iterator) {
+            while (tmp != null) {
+                if (tmp.iterator == index) {
+                    return tmp;
+                }
+                tmp = tmp.getNext();
+            }
+        }
+        return null;
+    }
+
     // set get var
     public void setData(D data) {
         this.data = data;
@@ -60,14 +73,6 @@ public class LinkedList<D> {
 
     public D getData() {
         return (this.data);
-    }
-
-    private void incIterator(){
-        this.iterator++;
-    }
-
-    private void descIterator(){
-        this.iterator--;
     }
 
     public int getIterator() {
