@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="mainTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2018-03-02T14:18:06" hostname="DESKTOP-CDVSN6B" time="0.002">
+<testsuite name="mainTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2018-03-02T15:14:09" hostname="DESKTOP-CDVSN6B" time="0.002">
   <properties/>
   <testcase name="testmain" classname="mainTest" time="0.002">
     <failure message="junit.framework.AssertionFailedError: lol" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: lol
 	at junit.framework.Assert.fail(Assert.java:57)
 	at junit.framework.TestCase.fail(TestCase.java:227)
-	at mainTest.testmain(mainTest.java:6)
+	at mainTest.testmain(mainTest.java:9)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

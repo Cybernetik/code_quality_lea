@@ -1,6 +1,7 @@
 
 public class main {
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         LinkedList<String> test = new LinkedList<String>("a");
         System.out.println(test.getData());
         test.addTail("b");
@@ -10,14 +11,14 @@ public class main {
         test.addTail("d");
         System.out.println(test.getTailData());
 
-        LinkedList<String> list_test = test.getHead();
+        LinkedList<String> listtest = test.getHead();
         System.out.printf("[");
-        while (list_test.getNext() != null){
-            System.out.printf(list_test.getData());
+        while (listtest.getNext() != null) {
+            System.out.printf(listtest.getData());
             System.out.printf(", ");
-            list_test = list_test.getNext();
+            listtest = listtest.getNext();
         }
-        System.out.printf(list_test.getData());
+        System.out.printf(listtest.getData());
         System.out.println("]");
 
     }

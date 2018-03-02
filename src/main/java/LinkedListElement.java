@@ -64,7 +64,7 @@ public class LinkedListElement<D> {
         Element<D> tmp = this.head;
         int index = 0;
         tmp.setIndex(0);
-        while(tmp.getNext() != null) {
+        while (tmp.getNext() != null) {
             tmp = tmp.getNext();
             tmp.setIndex(++index);
         }
@@ -74,7 +74,7 @@ public class LinkedListElement<D> {
     private void reloadIndex(int index) {
         Element<D> tmp = goToIndex(index);
         tmp.setIndex(index);
-        while(tmp.getNext() != null) {
+        while (tmp.getNext() != null) {
             tmp = tmp.getNext();
             tmp.setIndex(++index);
         }
@@ -155,20 +155,20 @@ public class LinkedListElement<D> {
         return (this.goToHead());
     }
 
-    public Element<D> getHeadData(){
+    public Element<D> getHeadData() {
         return (this.head);
     }
 
-    public Element<D> getTail(){
+    public Element<D> getTail() {
         return (this.goToTail());
     }
 
-    public Element<D> getTailData(){
+    public Element<D> getTailData() {
         return (this.tail);
     }
 
-    public Element<D> getPosition(int index){
-        return(this.goToIndex(index));
+    public Element<D> getPosition(int index) {
+        return (this.goToIndex(index));
     }
 
     // find equals

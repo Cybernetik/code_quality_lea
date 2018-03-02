@@ -41,7 +41,7 @@
             <property name="max" value="100"/>
             <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
         </module>
-        <module name="AvoidStarImport"/>
+        <!--<module name="AvoidStarImport"/>-->
         <module name="OneTopLevelClass"/>
         <module name="NoLineWrap"/>
         <module name="EmptyBlock">
@@ -96,10 +96,10 @@
             <message key="name.invalidPattern"
                      value="Package name ''{0}'' must match pattern ''{1}''."/>
         </module>
-        <module name="TypeName">
+        <!--<module name="TypeName">
             <message key="name.invalidPattern"
                      value="Type name ''{0}'' must match pattern ''{1}''."/>
-        </module>
+        </module>-->
         <module name="MemberName">
             <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9]*$"/>
             <message key="name.invalidPattern"
@@ -210,11 +210,11 @@
             <property name="allowedAnnotations" value="Override, Test"/>
             <property name="allowThrowsTagsForSubclasses" value="true"/>
         </module>-->
-        <module name="MethodName">
+        <!--<module name="MethodName">
             <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9_]*$"/>
             <message key="name.invalidPattern"
                      value="Method name ''{0}'' must match pattern ''{1}''."/>
-        </module>
+        </module>-->
         <module name="SingleLineJavadoc">
             <property name="ignoreInlineTags" value="false"/>
         </module>
