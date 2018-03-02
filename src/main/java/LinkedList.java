@@ -1,4 +1,3 @@
-package code_quality_lea;
 
 public class LinkedList<D> {
 
@@ -8,7 +7,7 @@ public class LinkedList<D> {
     private LinkedList<D> prev;
     private LinkedList<D> next;
 
-    public LinkedList(D data){
+    public LinkedList(D data) {
         this.data = data;
         this.next = null;
         this.prev = null;
@@ -16,7 +15,7 @@ public class LinkedList<D> {
     }
 
     // go function
-    private LinkedList<D> goToHead(){
+    private LinkedList<D> goToHead() {
         LinkedList<D> tmp = this;
         while (tmp.getPrev() != null) {
             tmp = tmp.getPrev();
@@ -24,7 +23,7 @@ public class LinkedList<D> {
         return tmp;
     }
 
-    private LinkedList<D> goToTail(){
+    private LinkedList<D> goToTail() {
         LinkedList<D> tmp = this;
         while (tmp.getNext() != null) {
             tmp = tmp.getNext();
@@ -32,10 +31,10 @@ public class LinkedList<D> {
         return tmp;
     }
 
-    private LinkedList<D> goToIndex(int index){
+    private LinkedList<D> goToIndex(int index) {
         LinkedList<D> tmp = this.goToHead();
-        while (index > 0){
-            if (tmp.getNext() == null){
+        while (index > 0) {
+            if (tmp.getNext() == null) {
                 return null;
             }
             tmp = tmp.getNext();
@@ -44,13 +43,13 @@ public class LinkedList<D> {
         return tmp;
     }
 
-    private LinkedList<D> goToIndexIterator(int index){
+    private LinkedList<D> goToIndexIterator(int index) {
         LinkedList<D> tmp = this;
-        if (index == this.iterator){
+        if (index == this.iterator) {
            return tmp;
-        } else if (index < this.iterator){
+        } else if (index < this.iterator) {
             while (tmp != null){
-                if (tmp.iterator == index){
+                if (tmp.iterator == index) {
                     return tmp;
                 }
                 tmp = tmp.getPrev();
@@ -79,7 +78,7 @@ public class LinkedList<D> {
         return this.iterator;
     }
 
-    public void setNext(LinkedList<D> L){
+    public void setNext(LinkedList<D> L) {
         this.next = L;
 //        L.incIterator();
     }
@@ -88,7 +87,7 @@ public class LinkedList<D> {
         return this.next;
     }
 
-    public void setPrev(LinkedList<D> L){
+    public void setPrev(LinkedList<D> L) {
         this.prev = L;
 //        this.descIterator();
     }
@@ -98,28 +97,28 @@ public class LinkedList<D> {
     }
 
     // Add element
-    public Boolean addHead(D data){
+    public Boolean addHead(D data) {
         LinkedList<D> Head = this.goToHead();
         Head.prev = new LinkedList<D>(data);
         Head.prev.setNext(Head);
         return true;
     }
 
-    public Boolean addHead(LinkedList<D> L){
+    public Boolean addHead(LinkedList<D> L) {
         LinkedList<D> Head = this.goToHead();
         Head.prev = L;
         L.setNext(Head);
         return true;
     }
 
-    public Boolean addTail(D data){
+    public Boolean addTail(D data) {
         LinkedList<D> Tail = this.goToTail();
         Tail.next = new LinkedList<D>(data);
         Tail.next.setPrev(Tail);
         return true;
     }
 
-    public Boolean addTail(LinkedList<D> L){
+    public Boolean addTail(LinkedList<D> L) {
         LinkedList<D> Tail = this.goToTail();
         Tail.next = L;
         L.setPrev(Tail);

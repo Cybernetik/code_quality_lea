@@ -1,4 +1,3 @@
-package code_quality_lea;
 
 public class Element<D> {
 
@@ -8,14 +7,15 @@ public class Element<D> {
     public Element next;
     public Element prev;
 
-    public Element (D data){
+    /*penis*/
+    public Element(D data) {
         this.data = data;
         this.prev = null;
         this.next = null;
         this.index = -1;
     }
 
-    public Element (D data, int index){
+    public Element(D data, int index) {
         this.data = data;
         this.prev = null;
         this.next = null;
@@ -31,7 +31,7 @@ public class Element<D> {
         return (this.data);
     }
 
-    public void setIndex(int index){
+    public void setIndex(int index) {
         this.index = index;
     }
 
@@ -39,16 +39,16 @@ public class Element<D> {
         return this.index;
     }
 
-    public void setNext(Element<D> L){
-        this.next = L;
+    public void setNext(Element<D> element) {
+        this.next = element;
     }
 
     public Element<D> getNext() {
         return this.next;
     }
 
-    public void setPrev(Element<D> L){
-        this.prev = L;
+    public void setPrev(Element<D> element) {
+        this.prev = element;
     }
 
     public Element<D> getPrev() {
