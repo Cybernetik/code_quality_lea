@@ -147,8 +147,12 @@ public class LinkedList<D> {
         if (tmp == null) {
             return false;
         }
-        tmp.getPrev().setNext(tmp.getNext());
-        tmp.getNext().setPrev(tmp.getPrev());
+        if (tmp.getPrev() != null) {
+            tmp.getPrev().setNext(tmp.getNext());
+        }
+        if (tmp.getNext() != null) {
+            tmp.getNext().setPrev(tmp.getPrev());
+        }
         return true;
     }
 
@@ -216,10 +220,10 @@ public class LinkedList<D> {
     }
 
     //
-    public int getNumberOfElement() {
+    public int getNumberOfElements() {
         LinkedList<D> tmp = this.goToHead();
         int index = 0;
-        while (tmp.getNext() != null) {
+        while (tmp != null) {
             tmp = tmp.getNext();
             index++;
         }
